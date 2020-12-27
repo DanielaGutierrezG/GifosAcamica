@@ -1,0 +1,60 @@
+.dark-mode {
+  background-color: #37383c;
+  color: white;
+}
+
+.trending-gifos-dark {
+  background-color: #222326;
+}
+
+.text-dark-mode {
+  color: white;
+}
+
+.modal-dark-mode {
+  background: #37383c;
+}
+
+.input-dark-mode {
+  background: #37383c;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.input-active-dark-mode {
+  background: #37383c;
+  color: #ffffff;
+  border: none;
+}
+
+.dark-ver-mas {
+  color: black;
+  border: 1px solid white;
+}
+
+.dark-ver-mas:hover {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.hover-slider-left:hover {
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.hover-slider-right:hover {
+  cursor: pointer;
+  background: #ffffff;
+}
+
+.busqueda-active-dark {
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  height: auto;
+}
+
+.li-p-dark {
+  color: #ffffff;
+  opacity: .9;
+}

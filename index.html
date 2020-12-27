@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/dark.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.6/RecordRTC.js"></script>
+    <title>Gifos</title>
+  </head>
+  <body>
+    <div id="openModal" class="modalDialog">
+      <div id="containerOpenModal" class="containerOpenModal modal-white-mode">
+        <a href="#close" title="Close" class="closeModal close"
+          ><img src="assets/img/close.svg" alt="Close Modal"
+        /></a>
+        <img
+          class="buttonSliderLeft white-mode-slider-left"
+          src="assets/img/button-slider-left.svg"
+          alt="Button Left"
+        />
+        <img
+          class="buttonSliderRight white-mode-slider-right"
+          src="assets/img/Button-Slider-right.svg"
+          alt="Button Rights"
+        />
+      </div>
+    </div>
+
+    <header class="headerContainer">
+      <figure class="headerFigure">
+        <img src="assets/img/LogoGifos.png" alt="Logo" class="LogoGifos"/>
+      </figure>
+      <input type="checkbox" id="botonMovil" class="botonMovil" />
+      <label for="botonMovil" class="labelMovil"
+        ><span class="icons-bars-times"
+          ><i class="fas fa-bars text-white-mode"></i
+          ><i class="fas fa-times text-white-mode"></i></span
+      ></label>
+      <nav class="botoneraMovil nav-white-mode">
+        <ul>
+          <li id="modoNocturno">
+            <a class="text-white-mode" href="#">Modo Nocturno</a>
+          </li>
+          <li id="liMisGifosFavoritos">
+            <a class="text-white-mode" href="#favoritos">Favoritos</a>
+          </li>
+          <li id="misGifos">
+            <a class="text-white-mode" href="#mis-gifos">Mis GIFOS</a>
+          </li>
+          <li class="imgCrearGifos">
+            <img
+              class="crearGifos"
+              id="crearGifos"
+              src="assets/img/button-crear-gifo.svg"
+              alt="Crear gifos"
+            />
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="sectionBuscador hiddenCrearGifo">
+      <h1 class="titleBuscador text-white-mode">
+        Inspírate, busca, guarda, y crea <br />
+        los mejores <s>GIFOS</s>
+      </h1>
+      <figure class="imageBuscador">
+        <img src="assets/img/ilustra_header.svg" alt="Ilustra" />
+      </figure>
+      <div class="container-ul-search">
+        <input
+          id="inputSearch"
+          class="input-white-mode inputSearch"
+          type="text"
+          placeholder="Busca GIFOS y más"
+          autocomplete="off"
+        />
+        <span
+          ><img
+            class="iconSearch"
+            src="assets/img/icon-search.svg"
+            alt="Search"
+          /><img class="iconClose" src="assets/img/close.svg" alt="Close" />
+        </span>
+      </div>
+      <p class="trending text-white-mode">Trending:</p>
+      <div class="containerTrendingP"></div>
+      <div class="resultsGifos" id="resultsGifos">
+        <hr />
+        <h2 id="titleCategorySearch" class="text-white-mode">""</h2>
+        <div class="contentResultsGifos"></div>
+      </div>
+      <button class="button-ver-mas verMasGifos white-ver-mas" id="verMasGifs">
+        VER MAS...
+      </button>
+    </section>
+
+    <section class="misGifosFavoritos hiddenCrearGifo">
+      <img src="assets/img/icon-favoritos.svg" alt="Favoritos" />
+      <h2 class="trendingGifos titleMisGifosFavoritos text-white-mode">
+        Favoritos
+      </h2>
+      <div
+        class="containerMisGifosFavoritos"
+        id="containerMisGifosFavoritos"
+      ></div>
+      <button
+        class="button-ver-mas verMasGifosFavoritos white-ver-mas"
+        id="verMasGifsFavoritos"
+      >
+        VER MAS...
+      </button>
+      <div id="notFoundFavorites" class="notFoundFavorites">
+        <img
+          src="assets/img/icon-fav-sin-contenido.svg"
+          alt="Not Found Favorites"
+        />
+        <p>"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"</p>
+      </div>
+    </section>
+
+    <section class="misGifos hiddenCrearGifo">
+      <img src="assets/img/icon-mis-gifos.svg" alt="Mis Gifos" />
+      <h2 class="titleMisGifos text-white-mode">Mis Gifos</h2>
+      <div class="containerMisGifos" id="containerMisGifos"></div>
+      <button
+        class="button-ver-mas verMasMisGifos white-ver-mas"
+        id="verMasMisGifs"
+      >
+        VER MAS...
+      </button>
+      <div id="notFoundMisGifos" class="notFoundMisGifos">
+        <img src="assets/img/icon-mis-gifos-sin-contenido.svg" alt="" />
+        <p>¡Animate a crear tu primer GIFO!</p>
+      </div>
+    </section>
+
+    <section
+      id="trendingGifos"
+      class="trendingGifos trending-gifos-white hiddenCrearGifo"
+    >
+      <h2 class="text-white-mode">Trending GIFOS</h2>
+      <div>
+        <p class="p-dark-mode">Mira los últimos</p>
+        <p class="pGifos p-dark-mode">GIFOS de nuestra comunidad.</p>
+      </div>
+    </section>
+
+    <section class="containerImgGifos trending-gifos-white hiddenCrearGifo">
+      <img
+        class="buttonSliderLeft retrocederSliderTrending white-mode-slider-left"
+        src="assets/img/button-slider-left.svg"
+        alt="Button Left"
+      />
+      <img
+        class="buttonSliderRight avanzarSliderTrending white-mode-slider-right"
+        src="assets/img/Button-Slider-right.svg"
+        alt="Button Rights"
+      />
+    </section>
+
+    <section id="containerSubirGifo" class="containerSubirGifo">
+      <figure class="imageCamSubir">
+        <img class="imageCam1" src="assets/img/camara.svg" alt="Camara" />
+        <img
+          class="imageCam2"
+          src="assets/img/element-luz-camara.svg"
+          alt="Element camara"
+        />
+      </figure>
+      <figure class="imageCamPelicula">
+        <img src="assets/img/pelicula.svg" alt="" />
+      </figure>
+
+      <p class="counter">00:00:00</p>
+
+      <img
+        class="img-loader-subir pasos-img-h2"
+        src="assets/img/loader.svg"
+        alt="Loader"
+      />
+      <img
+        class="img-loader-exito pasos-img-h2"
+        src="assets/img/check.svg"
+        alt="Check"
+      />
+      <span class="container-icon-crear">
+        <a class="a-download" href="#">
+          <img
+            class="icon-download-hover icon-download-crear"
+            src="assets/img/icon-download.svg"
+            alt="Icon download"
+          />
+        </a>
+        <a class="a-link" href="#" target="_blank">
+          <img
+            class="icon-link-normal icon-link-hover icon-link-crear"
+            src="assets/img/icon-link-normal.svg"
+            alt="Link Gifo"
+          />
+        </a>
+      </span>
+
+      <h2 class="loader-subir-gifo pasos-img-h2">Estamos subiendo tu GIFO</h2>
+      <h2 class="loader-exito-gifo pasos-img-h2">GIFO subido con éxito</h2>
+
+      <div id="containerCrearGifo" class="containerCrearGifo">
+        <h2 class="tcrear1 title-crear-gifos text-white-mode">
+          Aqui podrás <br />
+          crear tus propios <s>GIFOS</s>
+        </h2>
+        <p class="tcrear1">!Crea tu GIFO en sólo 3 pasos!</p>
+        <p class="tcrear1">(sólo necesitas una cámara para grabar un video)</p>
+
+        <h2 class="tcrear2 title-crear-gifos text-white-mode">
+          ¿Nos das acceso <br />
+          a tu cámara?
+        </h2>
+        <p class="tcrear2">El acceso a tu camara será valido sólo</p>
+        <p class="tcrear2">por el tiempo en el que estés creando el GIFO</p>
+
+        <video
+          class="container-video-gif"
+          id="container-video-gif"
+          autoplay
+        ></video>
+        <div class="container-preview-video">
+          <img class="testing" src="assets/img/check.svg" alt="Testing Gifs" />
+          <img
+            class="previewImgGif"
+            src="assets/img/check.svg"
+            alt="Preview Gif"
+          />
+        </div>
+      </div>
+
+      <div class="containerPasos">
+        <img class="paso1" src="assets/img/paso-a-paso.svg" alt="Paso 1" />
+        <img class="paso2" src="assets/img/paso-a-paso2.svg" alt="Paso 2" />
+        <img class="paso3" src="assets/img/paso-a-paso3.svg" alt="Paso 3" />
+      </div>
+
+      <hr class="hr-image-subir" />
+
+      <button
+        class="button-ver-mas actions-buttons buttonComenzar white-ver-mas"
+      >
+        COMENZAR
+      </button>
+      <button class="button-ver-mas actions-buttons buttonGrabar white-ver-mas">
+        GRABAR
+      </button>
+      <button
+        class="button-ver-mas actions-buttons buttonFinalizar white-ver-mas"
+      >
+        FINALIZAR
+      </button>
+      <button
+        class="button-ver-mas actions-buttons buttonSubirGifo white-ver-mas"
+      >
+        SUBIR GIFO
+      </button>
+    </section>
+
+    <footer class="containerFooter">
+      <div class="containerIconsRedes">
+        <p class="p-dark-mode">Compartir en:</p>
+        <div>
+          <a href="https://www.facebook.com" target="_blank">
+            <img
+              class="facebook"
+              src="assets/img/icon_facebook.svg"
+              onmouseover="this.src='assets/img/icon_facebook_hover.svg'"
+              onmouseout="this.src='assets/img/icon_facebook.svg'"
+              alt="Facebook"
+          /></a>
+          <a href="https://www.twitter.com" target="_blank">
+            <img
+              class="twitter"
+              src="assets/img/icon-twitter.svg"
+              onmouseover="this.src='assets/img/icon-twitter-hover.svg'"
+              onmouseout="this.src='assets/img/icon-twitter.svg'"
+              alt="Twitter"
+            />
+          </a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><img
+              class="instagram"
+              src="assets/img/icon_instagram.svg"
+              onmouseover="this.src='assets/img/icon_instagram-hover.svg'"
+              onmouseout="this.src='assets/img/icon_instagram.svg'"
+              alt="Instagram"
+          /></a>
+        </div>
+      </div>
+      <p class="footerGifosAll p-dark-mode">
+        @ GIFOS 2020 All Rights Reserved.
+      </p>
+    </footer>
+
+    <script type="module" src="assets/js/DarkMode.js"></script>
+    <script type="module" src="api/index.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/Functions.js"></script>
+    <script type="module" src="assets/js/Create.js"></script>
+  </body>
+</html>
