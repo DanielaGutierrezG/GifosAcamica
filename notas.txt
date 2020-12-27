@@ -1,2 +1,2 @@
-github: https://github.com/migue1223/gifos
-proyecto: https://vigorous-roentgen-ba667c.netlify.app/
+GitHub: https://github.com/DanielaGutierrezG/GifosAcamica
+Proyecto: 
